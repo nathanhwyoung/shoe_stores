@@ -167,7 +167,7 @@
             $test_brand->save();
 
             $store_name = "LOTSA SHOES HERE";
-            $id = 2;
+            $id2 = 2;
             $test_store = new Store($store_name, $id2);
             $test_store->save();
 
@@ -181,7 +181,7 @@
             $test_brand->addStore($test_store2);
 
             //Assert
-            $this->assertEquals($test_brand->getStores(); [$test_store, $test_store2]);
+            $this->assertEquals($test_brand->getStores(), [$test_store, $test_store2]);
 
         }
 
