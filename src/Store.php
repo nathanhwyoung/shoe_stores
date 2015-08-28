@@ -89,7 +89,7 @@
         function getBrands()
         {
             $query = $GLOBALS['DB']->query("SELECT brand_id FROM stores_brands
-                WHERE store_id = {this->getId()};");
+                WHERE store_id = {$this->getId()};");
             $brand_ids = $query->fetchAll(PDO::FETCH_ASSOC);
 
             $brands = array();
