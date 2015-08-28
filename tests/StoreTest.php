@@ -1,4 +1,5 @@
 <?php
+
     /**
     * @backupGlobals disabled
     * @backupStaticAttributes disabled
@@ -17,17 +18,17 @@
         protected function tearDown()
         {
           Store::deleteAll();
-          //Brand::deleteAll();
+          Brand::deleteAll();
         }
 
         function test_getStoreName()
         {
             //Arrange
             $store_name = "BIG FUCKING SHOE STORE";
-            $test_Store = new Store($store_name);
+            $test_store = new Store($store_name);
 
             //Act
-            $result = $test_Store->getStoreName();
+            $result = $test_store->getStoreName();
 
             //Assert
             $this->assertEquals($store_name, $result);
