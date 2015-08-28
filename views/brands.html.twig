@@ -12,7 +12,7 @@
                     <p>AVAILABLE BRANDS:</p>
                     <ul>
                         {% for brand in brands %}
-                            <li>{{ brand.getBrandName }}</li>
+                        <li><a href="/brands/{{ brand.getId }}">{{ brand.getBrandName }}</a></li>
                         {% endfor %}
                     </ul>
                 {% endif %}
