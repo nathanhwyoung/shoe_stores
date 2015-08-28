@@ -2,7 +2,7 @@
 
 ##### _Brand & Store Finder, 08/28/2013_
 
-#### By _**{List of contributors}**_
+#### By _**Nathan Young**_
 
 ## Description
 
@@ -19,15 +19,11 @@ _This application allows you to add shoe brands and shoe stores to individual li
 * _CREATE TABLE brands (id serial PRIMARY KEY, brand_name varchar(255));_
 * _CREATE TABLE stores_brands (id serial PRIMARY KEY, store_id INT, brand_id INT);_
 
-_{Leave nothing to chance! You want it to be easy for potential employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Are there other applications this app depends on?}_
-
 ## Technologies Used
 
 _Made using PHP, HTML, Silex, Composer, Twig, MYSQL, Apache. Tests conducted with PHPUnit._
 
 ### Legal
-
-*{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
 
 Copyright (c) 2015 **_Nathan Young_**
 
