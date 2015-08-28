@@ -90,6 +90,27 @@
       return $app['twig']->render('store.html.twig', array('store' => $store, 'stores' => Store::getAll(), 'brands' => $store->getBrands(), 'all_brands' => Brand::getAll()));
   });
 
+  //GET AND EDIT AND DELETE STORE ROUTE
+
+    $app->get("/stores/{id}/edit", function($id) use ($app) {
+        $store = Store::find($id);
+        return $app['twig']->render('store-edit.html.twig', array('store' => $store, 'brands' => $store->getBrands()));
+    });
+
+    $app->patch("/stores/{id}", function($id) use ($app){
+        $store = Store::find($id);
+        $new_name = $_POST['new_name'];
+        $store->update($new_name);
+        return $app['twig']->render('stores.html.twig', array('store' => $store, 'stores' => Store::getAll(), 'brands' => $store->getBrands()));
+    });
+
+
+    $app->delete("/stores/{id}", function($id) use ($app) {
+        $store = Store::find($id);
+        $store->delete();
+        return $app['twig']->render('stores.html.twig', array('stores' => Store::getAll()));
+    });
+
 
 
     return $app;
