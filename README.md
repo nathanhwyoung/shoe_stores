@@ -1,15 +1,18 @@
-# _{Application Name}_
+# _SHOES_
 
-##### _{Brief description of application}, {Date of current version}_
+##### _Brand & Store Finder, 08/28/2013_
 
 #### By _**{List of contributors}**_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. Do you want other developers to use this code in their apps? Talk about things like that here in simple terms.}_
+_This application allows you to add shoe brands and shoe stores to individual lists, and then link them to each other_
 
 ## Setup
-
+* _clone directory from https://github.com/nhwilcox/shoe_stores _
+* _run "composer install" into the terminal from the main folder directory_
+* _run "php -S localhost:8000" from the web folder_
+* _create a MYSQL database using the following commands_
 * _CREATE DATABASE shoes;_
 * _USE shoes;_
 * _CREATE TABLE stores (id serial PRIMARY KEY, store_name varchar(255));_
@@ -20,13 +23,13 @@ _{Leave nothing to chance! You want it to be easy for potential employers and co
 
 ## Technologies Used
 
-_{Tell me about the languages you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Made using PHP, HTML, Silex, Composer, Twig, MYSQL, Apache. Tests conducted with PHPUnit._
 
 ### Legal
 
 *{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
 
-Copyright (c) 2015 **_{List of contribtors}_**
+Copyright (c) 2015 **_Nathan Young_**
 
 This software is licensed under the MIT license.
 
