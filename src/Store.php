@@ -79,6 +79,34 @@
                 store_id = {$this->getId()};");
         }
 
+        function addBrand($brand)
+        {
+            $GLOBALS['DB']->exec("INSERT INTO stores_brands
+                (store_id, brand_id) VALUES
+                ({$this->getId()}, {$brand->getId()});");
+        }
+
+        function getBrands()
+        {
+            $query = $GLOBALS['DB']->query("SELECT brand_id FROM stores_brands
+                WHERE store_id = {this->getId()};");
+            $brand_ids = $query->fetchAll(PDO::FETCH_ASSOC);
+
+            $brands = array();
+            foreach($brand_ids as $id) {
+                $brand_id = $id['brand_id'];
+                $result = $GLOBALS['DB']->query("SELECT * FROM brands WHERE
+                    id = {$brand_id};");
+                $returned_brand = $result->fetchAll(PDO::FETCH_ASSOC);
+
+                $brand_name = $returned_brand[0]['brand_name'];
+                $id = $returned_brand[0]['id'];
+                $new_brand = new Brand($brand_name, $id);
+                array_push($brands, $new_brand);
+            }
+            return $brands;
+        }
+
 
     }
 ?>
